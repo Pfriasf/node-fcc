@@ -12,8 +12,8 @@ var app = express();
 console.log("Hello World");
 /** 2) A first working Express Server */
 /*app.get("/", function (req, res) {
-    res.send("Hello Express");*/
-});
+    res.send("Hello Express");
+});*/
 
 /** 3) Serve an HTML file */
 app.get("/", function (req, res) {
@@ -24,6 +24,11 @@ app.get("/", function (req, res) {
 app.use(express.static(__dirname + "/public"))
 
 /** 5) serve JSON on a specific route */
+app.get("/json", function (req, res) {
+    res.json({
+        "message": "Hello json"
+    })
+})
 
 
 /** 6) Use the .env file to configure the app */
